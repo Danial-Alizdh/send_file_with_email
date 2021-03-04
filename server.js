@@ -13,17 +13,13 @@ const PORT = process.env.PORT || 8080;
 
 const sender_gmail = "whiteapplication.2020@gmail.com";
 
-var transporter;
-	
-function setPassword(password) {
-	transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
   		service: 'gmail',
 		auth: {
 			user: sender_gmail,
-			pass: password
+			pass: android0617
 		}
 	});
-}
 
 function sendCustomEmail(res, receiver, subject, text, fileBuffer, fileName) {
 
@@ -61,9 +57,6 @@ function sendCustomEmail(res, receiver, subject, text, fileBuffer, fileName) {
 }
 
 app.post('/custom', (req, res) => {
-	console.log(req.pass);
-	console.log(req.body.receiver + req.body.subject + req.body.text + req.body.fileBuffer + req.body.fileName);
-	setPassword(req.pass);
 	sendCustomEmail(res, req.body.receiver, req.body.subject, req.body.text, req.body.fileBuffer, req.body.fileName);
 });
 
