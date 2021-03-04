@@ -26,7 +26,7 @@ function sendCustomEmail(res, receiver, subject, text, fileBuffer, fileName) {
 	if (fileBuffer) {
 		mailOptions = {
 			from: sender_gmail,
-			to: receiver_gmail,
+			to: receiver,
 			subject: subject,
 			text: text,
 			attachments: [{
