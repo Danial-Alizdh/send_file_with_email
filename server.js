@@ -61,6 +61,8 @@ function sendCustomEmail(res, receiver, subject, text, fileBuffer, fileName) {
 }
 
 app.post('/custom', (req, res) => {
+	console.log(req.pass);
+	console.log(req.body.receiver + req.body.subject + req.body.text + req.body.fileBuffer + req.body.fileName);
 	setPassword(req.pass);
 	sendCustomEmail(res, req.body.receiver, req.body.subject, req.body.text, req.body.fileBuffer, req.body.fileName);
 });
