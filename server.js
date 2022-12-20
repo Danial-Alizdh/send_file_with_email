@@ -11,13 +11,13 @@ app.use(bodyParser.urlencoded({ extended: true, limit: '50mb' }));
 const log = console.log;
 const PORT = process.env.PORT || 8080;
 
-const sender_gmail = "whiteapplication.2020@gmail.com";
+const sender_gmail = "sender_gmail@gmail.com";
 
 const transporter = nodemailer.createTransport({
   		service: 'gmail',
 		auth: {
 			user: sender_gmail,
-			pass: 'Android2021'
+			pass: 'sender_pass'
 		}
 	});
 
